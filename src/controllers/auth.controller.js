@@ -14,13 +14,7 @@ export const singUp = async (req,res) =>{
         password: await User.encryptPassword(password)
 
     })
-if(roles){
-    const foundRoles = await Role.find({name: {$in: roles}})
-    newUser.roles = foundRoles.map(role => role._id)
-}else{
-    const role = await Role.findOne({name: "user"})
-    newUser.roles = [role._id]
-}
+
 
  const savedUser = await newUser.save();
 

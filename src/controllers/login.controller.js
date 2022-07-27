@@ -18,5 +18,5 @@ export async function login(req, res) {
         email:user.email,
         token:token
     })
-    //res.status(400).json({ message:"invalid token" })
+
   }
